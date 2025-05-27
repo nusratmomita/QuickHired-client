@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router";
 import siteLog  from '../../assets/logo.png'; 
+import { AuthContext } from "../../Authentication/AuthContext";
 
 const Navbar = () => {
-    const links = <>
+
+  const {email} = useContext(AuthContext)
+
+  const links = 
+    <>
         <li><NavLink to='/'>Home</NavLink></li>
-        
     </>
+
   return (
     <div className="navbar bg-base-100 shadow-sm p-5">
       <div className="navbar-start">
@@ -50,10 +55,17 @@ const Navbar = () => {
           }
         </ul>
       </div>
-      <div className="navbar-end flex gap-3">
-        <NavLink to='/login' className="btn hover:rounded-3xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Login</NavLink>
-        <NavLink to='/register' className="btn hover:rounded-3xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Register</NavLink>
-      </div>
+      {
+        email ? 
+        <div className="navbar-end">
+          <button className="w-[85px] btn hover:rounded-xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Logout</button>
+        </div>
+        :
+        <div className="navbar-end flex gap-3">
+          <NavLink to='/login' className="btn hover:rounded-xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Login</NavLink>
+          <NavLink to='/register' className="btn hover:rounded-xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Register</NavLink>
+        </div>
+      }
     </div>
   );
 };
