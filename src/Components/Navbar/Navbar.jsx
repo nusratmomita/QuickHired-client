@@ -2,10 +2,21 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router";
 import siteLog  from '../../assets/logo.png'; 
 import { AuthContext } from "../../Authentication/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
 
-  const {email} = useContext(AuthContext)
+  const {user , handleLogOut} = useContext(AuthContext);
+
+  const handleLogout = () => {
+    handleLogOut()
+    .then(()=>{
+      toast.success("You've logged out successfully!");
+    })
+    .catch(()=>{
+      toast.error("Something went wrong:)")
+    })
+  }
 
   const links = 
     <>
@@ -56,9 +67,9 @@ const Navbar = () => {
         </ul>
       </div>
       {
-        email ? 
+        user ? 
         <div className="navbar-end">
-          <button className="w-[85px] btn hover:rounded-xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Logout</button>
+          <button onClick={handleLogout} className="w-[85px] btn hover:rounded-xl text-white text-xl font-bold p-4 bg-[#67AE6E]">Logout</button>
         </div>
         :
         <div className="navbar-end flex gap-3">
