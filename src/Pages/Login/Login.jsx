@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import LoginLottie from '../../../assets/login.json';
-import { AuthContext } from '../../../Authentication/AuthContext';
-import { ToastContainer , toast } from 'react-toastify';
+import { AuthContext } from '../../Authentication/AuthContext';
 import { useNavigate } from 'react-router';
-import Lottie from "lottie-react";
+import { toast, ToastContainer } from 'react-toastify';
+import Lottie from 'lottie-react';
+import LoginLottie from '../../assets/login.json'
 
 const Login = () => {
 
