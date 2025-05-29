@@ -26,7 +26,7 @@ const TopJobCard = ({job}) => {
                 <p className=' text-lg text-left font-semibold'>{job.description}</p>
                 <h1 className='bg-green-200 rounded-2xl text-green-900 text-xl font-bold p-3 w-[130px] mb-5 border-2 border-green-800'>{job.jobType}</h1>
                 <div className="card-actions">
-                    <Link to={`/job/${job._id}`}><button className="btn btn-primary">Apply Now</button></Link>
+                    <Link to={`/job/${job._id}`}><button className="btn btn-primary">Show Details</button></Link>
                 </div>
             </div>
         </div>

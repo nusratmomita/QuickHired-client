@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/job/:id",
+                loader: ({params}) => fetch(`http://localhost:8000/jobs/${params.id}`),
                 Component: JobDetails
             },
             {
