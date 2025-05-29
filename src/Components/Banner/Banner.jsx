@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import team1 from '../../assets/team1.png';
 import team2 from '../../assets/team2.png';
 
+// how to make the banner responsive
 const Banner = () => {
     return (
         <div className="mt-15 mb-15 rounded-2xl max-w-7xl mx-auto hero bg-green-100 p-20">
@@ -17,7 +18,7 @@ const Banner = () => {
                     <motion.img
                         src={team2}
                         animate={{x:[150,5,150]}}
-                        transition={{duration: 15 , delay:20 , repeat:Infinity}}
+                        transition={{duration: 15 , delay:5 , repeat:Infinity}}
                         className="lg:w-120 lg:h-90 border-e-8 border-green-600 border-b-8 rounded-t-[50px] shadow-2xl"
                     />
                 </div>
