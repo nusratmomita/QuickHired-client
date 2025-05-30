@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Authentication/AuthContext';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import Lottie from 'lottie-react';
 import LoginLottie from '../../assets/login.json'
@@ -9,6 +9,8 @@ const Login = () => {
     const {signInUser , handleGoogleAuth} = useContext(AuthContext);
     
     const navigate = useNavigate();
+    const location = useLocation();
+    // console.log(location)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -26,7 +28,7 @@ const Login = () => {
         .then(()=>{
             toast.success("Logged in successfully!");
             setTimeout(()=>{
-                navigate('/');
+                navigate(`${location.state ? location.state : '/'}`);
             },2000)
         })
         .catch(()=>{
@@ -40,7 +42,7 @@ const Login = () => {
             // console.log(result.user);
             toast.success("Logged in with Google successfully!");
             setTimeout(()=>{
-                navigate('/');
+                navigate(`${location.state ? location.state : '/'}`);
             },2000)
         })
         .catch(()=>{

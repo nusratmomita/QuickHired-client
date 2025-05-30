@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Calendar, Mail, User2 } from "lucide-react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const JobCard = () => {
     const job = useLoaderData();
@@ -81,14 +81,17 @@ const JobCard = () => {
 
             {/* Footer */}
             <div className="bg-gray-50 px-6 py-4 flex justify-between items-center text-sm text-gray-600 border-t">
-                <div className="flex items-center gap-2">
-                    <User2 className="w-4 h-4 text-green-500" />
-                    {job.hr_name}
+                <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                        <User2 className="w-4 h-4 text-green-500" />
+                        {job.hr_name}
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-green-500" />
+                        {job.hr_email}
+                    </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-green-500" />
-                    {job.hr_email}
-                </div>
+                <Link to={`/jobApply/${job._id}`}><button className="btn btn-soft bg-green-600 text-white btn-success">Apply Now</button></Link>
             </div>
         </motion.div>
     </div>
