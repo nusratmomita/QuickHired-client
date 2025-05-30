@@ -23,7 +23,7 @@ const Banner = () => {
                         className="lg:w-120 lg:h-90 border-e-8 border-green-600 border-b-8 rounded-t-[50px] shadow-2xl"
                     />
                 </div>
-                <div className='space-y-8 '>
+                <div className='space-y-8'>
                     <motion.h1 
                         animate={{
                             // rotate: 360,
