@@ -21,6 +21,15 @@ const Navbar = () => {
   const links = 
     <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {
+          // for job seekers 
+          (user && user?.email) && <li><NavLink to='/myApplications'>My Applications</NavLink></li>
+        }
+        {
+          // for job recruiters
+          (user && user?.email) && <li><NavLink to='/addJobs'>Add Job</NavLink></li>
+        }
+        
     </>
 
   return (
