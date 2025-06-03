@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const MyPostedJobList = ({MyPostedJobsPromise}) => {
     const jobs = use(MyPostedJobsPromise);
-    console.log(jobs)
+    //console.log(jobs)
     return (
         <div className="overflow-x-auto">
             <table className="table">

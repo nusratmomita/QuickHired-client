@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 
 const TopJobCard = ({job}) => {
-    // console.log(job)
+    // //console.log(job)
 
     return (
         <div className="card bg-base-100 w-110 shadow-sm">

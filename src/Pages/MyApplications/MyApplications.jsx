@@ -19,8 +19,8 @@ import { myApplicationsPromise } from '../../API/MyApplicationsPromise';
 
 const MyApplications = () => {
     const {user} = CustomHook();
-    // console.log(user.email)
-    console.log(myApplicationsPromise)
+    // //console.log(user.email)
+    //console.log(myApplicationsPromise)
     return (
         <div>
             My Applications

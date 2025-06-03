@@ -6,8 +6,8 @@ import { myPostedJobsPromise } from '../../API/MyPostedJobsPromise';
 const MyPostedJobs = () => {
 
     const {user} = CustomHook();
-    console.log(myPostedJobsPromise)
-    console.log(user)
+    //console.log(myPostedJobsPromise)
+    //console.log(user)
 
     return (
         <div className='m-50'>

@@ -8,7 +8,7 @@ const JobApply = () => {
     const {id} = useParams();
     
     const {user} = CustomHook();
-    console.log(user,id)
+    //console.log(user,id)
 
     const handleApply = e => {
         e.preventDefault();
@@ -18,7 +18,7 @@ const JobApply = () => {
         const github = form.github.value;
         const resume = form.resume.value;
 
-        // console.log(linkedIn,github,resume);
+        // //console.log(linkedIn,github,resume);
 
         const jobApplication = {
             id,
@@ -28,11 +28,11 @@ const JobApply = () => {
             resume
         }
 
-        // console.log(jobApplication)
+        // //console.log(jobApplication)
 
         axios.post('http://localhost:8000/applications' , jobApplication)
         .then((res)=>{
-            // console.log(data.data);
+            // //console.log(data.data);
             if(res.data.insertedId)
             {
                 toast.success("You've successfully applied for the job")

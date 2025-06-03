@@ -1,9 +1,9 @@
 import React, { use } from "react";
 
 const MyApplicationList = ({ myApplicationsPromise }) => {
-  // console.log(myApplicationsPromise)
+  // //console.log(myApplicationsPromise)
   const applicationList = use(myApplicationsPromise);
-  console.log(applicationList);
+  //console.log(applicationList);
   return (
     <div>
       <h1 className="text-3xl font-medium text-center">

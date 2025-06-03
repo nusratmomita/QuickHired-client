@@ -7,15 +7,15 @@ const ViewTotalApplications = () => {
     const applications = useLoaderData();
 
     const handleUpdatedStatus = (e,applicationId) => {
-        // console.log(applicationId)
+        //console.log(applicationId)
         axios.patch(`http://localhost:8000/applications/${applicationId}`, {status: e.target.value})
         .then(res=>{
             if(res.data.modifiedCount){
                 toast.success("Applications status updated successfully!")
             }
         })
-        .catch((error)=>{
-            console.log(error)
+        .catch(()=>{
+            toast.error("There is some problem updating the status.Please try later.")
         })
     }
 

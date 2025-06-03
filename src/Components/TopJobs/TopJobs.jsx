@@ -3,7 +3,7 @@ import TopJobCard from '../TopJobCard/TopJobCard';
 
 const TopJobs = ({topJobsPromise}) => {
     const topJobs = use(topJobsPromise);
-    console.log(topJobs);
+    //console.log(topJobs);
 
     return (
         <div>

@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 const AddJobs = () => {
 
     const {user} = CustomHook();
-    // console.log(user,user?.email)
+    // //console.log(user,user?.email)
 
     const handleAddJob = (e) => {
         e.preventDefault();
@@ -14,26 +14,26 @@ const AddJobs = () => {
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        // console.log(data)
+        // //console.log(data)
 
         // processing salaryRange[making an object]
         const {min,max,currency , ...newJob} = data;
         newJob.salaryRange = {min,max,currency};
-        // console.log(newJob)
+        // //console.log(newJob)
 
         // processing requirements[making an array]
         const requirementsArray = newJob.requirements.split(',').map((req)=>req.trim());
         newJob.requirements = requirementsArray
-        // console.log(newJob)
+        // //console.log(newJob)
 
         // processing responsibilities[making an array]
         const responsibilitiesArray = newJob.responsibilities.split(',').map((req)=>req.trim());
         newJob.responsibilities = responsibilitiesArray
-        // console.log(newJob)
+        // //console.log(newJob)
 
         newJob.status = "active";
         newJob.hr_email = user?.email;
-        console.log(newJob)
+        //console.log(newJob)
 
         axios.post('http://localhost:8000/jobs' , newJob)
         .then(data=>{

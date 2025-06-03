@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log(email,password)
+    // //console.log(email,password)
 
     if(!email || !password){
       toast.error("You must fill in all the field.")
@@ -27,7 +27,7 @@ const Register = () => {
     // creating a user
     createUser(email,password)
     .then((userInfo)=>{
-      console.log(userInfo.user)
+      //console.log(userInfo.user)
       toast.success("Created a new account successfully!");
       setTimeout(()=>{
                 navigate('/');
@@ -41,14 +41,14 @@ const Register = () => {
   const handleGoogleRegister = () => {
     handleGoogleAuth()
       .then(()=>{
-          // console.log(result.user);
+          // //console.log(result.user);
           toast.success("Register with Google successfully!");
           setTimeout(()=>{
               navigate('/');
           },2000)
       })
       .catch(()=>{
-          // console.log(error)
+          // //console.log(error)
           toast.error("Login with Google faced some problems.")
       })
   };

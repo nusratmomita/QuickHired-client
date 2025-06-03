@@ -5,7 +5,7 @@ import { Link, useLoaderData } from "react-router";
 
 const JobCard = () => {
     const job = useLoaderData();
-    // console.log(job)
+    // //console.log(job)
 
     return (
         <div className="flex items-center justify-center m-10">

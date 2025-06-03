@@ -10,7 +10,7 @@ const Login = () => {
     
     const navigate = useNavigate();
     const location = useLocation();
-    // console.log(location)
+    // //console.log(location)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -39,14 +39,14 @@ const Login = () => {
     const handleGoogleLogin = () => {
         handleGoogleAuth()
         .then(()=>{
-            // console.log(result.user);
+            // //console.log(result.user);
             toast.success("Logged in with Google successfully!");
             setTimeout(()=>{
                 navigate(`${location.state ? location.state : '/'}`);
             },2000)
         })
         .catch(()=>{
-            // console.log(error)
+            // //console.log(error)
             toast.error("Login with Google faced some problems.")
         })
     };
