@@ -32,6 +32,8 @@ const AddJobs = () => {
         // console.log(newJob)
 
         newJob.status = "active";
+        newJob.hr_email = user?.email;
+        console.log(newJob)
 
         axios.post('http://localhost:8000/jobs' , newJob)
         .then(data=>{
