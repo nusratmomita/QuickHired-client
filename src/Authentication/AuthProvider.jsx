@@ -53,7 +53,10 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const userData = { email: currentUser?.email };
         // console.log(userData);
-        axios.post("http://localhost:8000/jwt", userData).then((res) => {
+        axios.post("http://localhost:8000/jwt", userData , {
+          withCredentials: true, // [setting up cookies] to allow cookies to be sent with the request (tells axios to send and accept cookies)
+        })
+        .then((res) => {
           // console.log(res.data);
           console.log("Token after JWT", res.data);
           const token = res.data.token;
